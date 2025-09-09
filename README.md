@@ -45,15 +45,21 @@ The app is built using **Bloc (Business Logic Component) architecture**, utilize
 
 ```
 lib/
+├── main.dart
 ├── core/
 │   ├── constants/
+│   │   ├── app_assets.dart
 │   │   ├── app_colors.dart
 │   │   └── app_strings.dart
 │   └── utils/
 │       └── validators.dart
 ├── data/
-│   └── models/
-│       └── contact_model.dart
+│   ├── datasources/
+│   │   └── contact_local_datasource.dart
+│   ├── models/
+│   │   └── contact_model.dart
+│   └── repositories/
+│       └── contact_repositor.dart
 ├── logic/
 │   ├── auth_bloc/
 │   │   ├── auth_bloc.dart
@@ -66,7 +72,10 @@ lib/
 ├── presentation/
 │   ├── widgets/
 │   │   ├── contact_card.dart
+│   │   ├── custom_button.dart
 │   │   └── custom_textfield.dart
+│   ├── themes/
+│   │   └── app_theme.dart
 │   └── screens/
 │       ├── home_screen.dart
 │       └── login_screen.dart
