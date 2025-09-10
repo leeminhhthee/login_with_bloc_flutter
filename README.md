@@ -118,12 +118,8 @@ flutter build apk
 
 ## Demo
 
-**Login Screen**
-
-
-**Home Screen**
-
-
+| ![](assets/demo/Pic1.png) | ![](assets/demo/Pic2.png) | ![](assets/demo/Pic3.png) | ![](assets/demo/Pic4.png) |
+|--------------|---------------|----------------|------------|
 ---
 
 ## Future Enhancements

@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'contact_event.dart';
 import 'contact_state.dart';
 import '../../data/repositories/contact_repository.dart';
