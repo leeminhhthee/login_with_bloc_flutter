@@ -80,7 +80,7 @@ lib/
 │       ├── home_screen.dart
 │       └── login_screen.dart
 assets/
-└── mockdata.json
+└── mock_contacts.json
 ```
 
 ---
