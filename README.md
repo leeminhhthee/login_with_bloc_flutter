@@ -111,7 +111,7 @@ flutter build apk
 ---
 
 ## Notes
-- When modifying `mockdata.json`, a **hot restart** is required to reload the data.
+- When modifying `mock_contacts.json`, a **hot restart** is required to reload the data.
 - Password visibility can be toggled using the **eye icon** on login screen.
 
 ---
