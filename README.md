@@ -44,43 +44,52 @@ The app is built using **Bloc (Business Logic Component) architecture**, utilize
 ## Project Structure
 
 ```
-lib/
-├── main.dart
-├── core/
-│   ├── constants/
-│   │   ├── app_assets.dart
-│   │   ├── app_colors.dart
-│   │   └── app_strings.dart
-│   └── utils/
-│       └── validators.dart
-├── data/
-│   ├── datasources/
-│   │   └── contact_local_datasource.dart
-│   ├── models/
-│   │   └── contact_model.dart
-│   └── repositories/
-│       └── contact_repositor.dart
-├── logic/
-│   ├── auth_bloc/
-│   │   ├── auth_bloc.dart
-│   │   ├── auth_event.dart
-│   │   └── auth_state.dart
-│   └── contact_bloc/
-│       ├── contact_bloc.dart
-│       ├── contact_event.dart
-│       └── contact_state.dart
-├── presentation/
-│   ├── widgets/
-│   │   ├── contact_card.dart
-│   │   ├── custom_button.dart
-│   │   └── custom_textfield.dart
-│   ├── themes/
-│   │   └── app_theme.dart
-│   └── screens/
-│       ├── home_screen.dart
-│       └── login_screen.dart
-assets/
-└── mock_contacts.json
+├───lib
+│   │   main.dart
+│   ├───config
+│   │       app_theme.dart
+│   ├───core
+│   │   ├───constants
+│   │   │       app_assets.dart
+│   │   │       app_colors.dart
+│   │   │       app_strings.dart
+│   │   ├───errors
+│   │   └───utils
+│   │           validators.dart
+│   ├───features
+│   │   ├───auth
+│   │   │   ├───data
+│   │   │   ├───domain
+│   │   │   └───presentation
+│   │   │       ├───bloc
+│   │   │       │       auth_bloc.dart
+│   │   │       │       auth_event.dart
+│   │   │       │       auth_state.dart
+│   │   │       ├───screens
+│   │   │       │       login_screen.dart
+│   │   │       └───widgets
+│   │   │               custom_button.dart
+│   │   │               custom_textfield.dart
+│   │   └───contacts
+│   │       ├───data
+│   │       │   ├───datasources
+│   │       │   │       contact_local_datasource.dart
+│   │       │   ├───models
+│   │       │   │       contact_model.dart
+│   │       │   └───repositories
+│   │       │           contact_repository.dart
+│   │       ├───domain
+│   │       └───presentation
+│   │           ├───blocs
+│   │           │       contact_bloc.dart
+│   │           │       contact_event.dart
+│   │           │       contact_state.dart
+│   │           ├───screens
+│   │           └───widgets
+│   │                   contact_card.dart
+│   └───shared_widgets
+├───assets/
+│   │  mock_contacts.json
 ```
 
 ---
