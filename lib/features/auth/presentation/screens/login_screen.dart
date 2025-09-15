@@ -1,18 +1,17 @@
 import 'package:delightful_toast/delight_toast.dart';
 import 'package:delightful_toast/toast/components/toast_card.dart';
 import 'package:delightful_toast/toast/utils/enums.dart';
-import 'package:e_commerce_app/core/constants/app_strings.dart';
 import 'package:e_commerce_app/core/constants/app_colors.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_bloc.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_event.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_state.dart';
-import 'package:e_commerce_app/presentation/widgets/custom_button.dart';
-import 'package:e_commerce_app/presentation/widgets/custom_textfield.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:e_commerce_app/features/auth/presentation/widgets/custom_button.dart';
+import 'package:e_commerce_app/features/auth/presentation/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'home_screen.dart';
-import '../../core/utils/validators.dart';
+import '../../../contacts/presentation/screens/home_screen.dart';
+import '../../../../core/utils/validators.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -120,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           const SizedBox(height: 18),
                           CustomButton(
-                            text: AppStrings.loginButton,
+                            text: 'LOGIN',
                             loading: state is AuthLoading,
                             onPressed: _onLoginPressed,
                           ),

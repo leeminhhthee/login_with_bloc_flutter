@@ -1,12 +1,11 @@
-import 'package:e_commerce_app/core/constants/app_strings.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_bloc.dart';
-import 'package:e_commerce_app/logic/contact_bloc/contact_bloc.dart';
-import 'package:e_commerce_app/presentation/themes/app_theme.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_bloc.dart';
+import 'package:e_commerce_app/config/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'data/datasources/contact_local_datasource.dart';
-import 'data/repositories/contact_repository.dart';
-import 'presentation/screens/login_screen.dart';
+import 'features/contacts/data/datasources/contact_local_datasource.dart';
+import 'features/contacts/data/repositories/contact_repository.dart';
+import 'features/auth/presentation/screens/login_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: AppStrings.appTitle,
+        title: 'Contact BLoC App',
         theme: appLightTheme(),    
         darkTheme: appDarkTheme(),   
         themeMode: ThemeMode.system,

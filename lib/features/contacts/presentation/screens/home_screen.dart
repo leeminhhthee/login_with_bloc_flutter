@@ -1,15 +1,14 @@
 import 'package:e_commerce_app/core/constants/app_colors.dart';
-import 'package:e_commerce_app/core/constants/app_strings.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_bloc.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_event.dart';
-import 'package:e_commerce_app/logic/auth_bloc/auth_state.dart';
-import 'package:e_commerce_app/logic/contact_bloc/contact_bloc.dart';
-import 'package:e_commerce_app/logic/contact_bloc/contact_event.dart';
-import 'package:e_commerce_app/logic/contact_bloc/contact_state.dart';
-import 'package:e_commerce_app/presentation/widgets/contact_card.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:e_commerce_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_bloc.dart';
+import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_event.dart';
+import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_state.dart';
+import 'package:e_commerce_app/features/contacts/presentation/widgets/contact_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'login_screen.dart';
+import '../../../auth/presentation/screens/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,8 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text(AppStrings.logout),
-        content: const Text(AppStrings.logoutConfirm),
+        title: const Text('Logout'),
+        content: const Text('Bạn có chắc chắn muốn đăng xuất?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(),
