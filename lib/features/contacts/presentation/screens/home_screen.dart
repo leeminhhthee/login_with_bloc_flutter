@@ -5,18 +5,26 @@ import 'package:e_commerce_app/features/auth/presentation/bloc/auth_state.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_bloc.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_event.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_state.dart';
+import 'package:e_commerce_app/features/contacts/presentation/screens/contact_detail_screen.dart';
 import 'package:e_commerce_app/features/contacts/presentation/widgets/contact_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../auth/presentation/screens/login_screen.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  Future<String?> _getLoggedInEmail() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('loggedInUser');
+  }
 
   @override
   void initState() {
@@ -70,32 +78,75 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
           backgroundColor: AppColors.primaryLight,
         ),
-        body: BlocBuilder<ContactBloc, ContactState>(
-          builder: (context, state) {
-            if (state is ContactLoading) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (state is ContactLoaded) {
-              final contacts = state.contacts;
-              return RefreshIndicator(
-                onRefresh: () async {
-                  context.read<ContactBloc>().add(LoadContacts());
-                },
-                child: ListView.separated(
-                  padding: const EdgeInsets.all(12),
-                  itemCount: contacts.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 10),
-                  itemBuilder: (context, index) {
-                    final contact = contacts[index];
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FutureBuilder<String?>(
+              future: _getLoggedInEmail(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                if (snapshot.hasData && snapshot.data != null) {
+                  return Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      "Xin chào, ${snapshot.data!}",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  );
+                }
+                return const SizedBox.shrink();
+              },
+            ),
 
-                    return ContactCard(contact: contact);
-                  },
-                ),
-              );
-            } else if (state is ContactError) {
-              return Center(child: Text(state.message));
-            }
-            return const SizedBox.shrink();
-          },
+            // Danh sách contacts
+            Expanded(
+              child: BlocBuilder<ContactBloc, ContactState>(
+                builder: (context, state) {
+                  if (state is ContactLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (state is ContactLoaded) {
+                    final contacts = state.contacts;
+                    return RefreshIndicator(
+                      onRefresh: () async {
+                        context.read<ContactBloc>().add(LoadContacts());
+                      },
+                      child: ListView.separated(
+                        padding: const EdgeInsets.all(12),
+                        itemCount: contacts.length,
+                        separatorBuilder: (_, __) =>
+                            const SizedBox(height: 10),
+                        itemBuilder: (context, index) {
+                          final contact = contacts[index];
+                          return InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => ContactDetailScreen(contact: contact),
+                                ),
+                              );
+                            },
+                            child: ContactCard(contact: contact),
+                          );
+                        },
+
+                      ),
+                    );
+                  } else if (state is ContactError) {
+                    return Center(child: Text(state.message));
+                  }
+                  return const SizedBox.shrink();
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );

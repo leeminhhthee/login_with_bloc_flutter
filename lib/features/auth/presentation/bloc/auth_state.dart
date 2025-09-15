@@ -11,7 +11,9 @@ class AuthLoading extends AuthState {}
 
 class AuthAuthenticated extends AuthState {
   final String email;
+
   AuthAuthenticated(this.email);
+
   @override
   List<Object?> get props => [email];
 }
@@ -20,7 +22,9 @@ class AuthUnauthenticated extends AuthState {}
 
 class AuthFailure extends AuthState {
   final String message;
+
   AuthFailure(this.message);
+
   @override
   List<Object?> get props => [message];
 }
