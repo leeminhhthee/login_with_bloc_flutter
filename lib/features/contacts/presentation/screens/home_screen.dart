@@ -1,7 +1,7 @@
 import 'package:e_commerce_app/core/constants/app_colors.dart';
-import 'package:e_commerce_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:e_commerce_app/features/auth/presentation/bloc/auth_event.dart';
-import 'package:e_commerce_app/features/auth/presentation/bloc/auth_state.dart';
+import 'package:e_commerce_app/features/auth/presentation/blocs/auth_bloc.dart';
+import 'package:e_commerce_app/features/auth/presentation/blocs/auth_event.dart';
+import 'package:e_commerce_app/features/auth/presentation/blocs/auth_state.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_bloc.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_event.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_state.dart';

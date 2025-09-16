@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:e_commerce_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:e_commerce_app/features/auth/presentation/bloc/auth_event.dart';
+import 'package:e_commerce_app/features/auth/presentation/blocs/auth_bloc.dart';
+import 'package:e_commerce_app/features/auth/presentation/blocs/auth_event.dart';
 import 'package:e_commerce_app/features/contacts/presentation/blocs/contact_bloc.dart';
 import 'package:e_commerce_app/config/app_theme.dart';
 import 'package:flutter/material.dart';
