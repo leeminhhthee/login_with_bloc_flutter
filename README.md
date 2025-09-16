@@ -87,7 +87,7 @@ The app uses **Bloc architecture** for state management and **Material Design** 
 │   │   │   │           login_user.dart
 │   │   │   │           logout_user.dart
 │   │   │   └───presentation
-│   │   │       ├───bloc
+│   │   │       ├───blocs
 │   │   │       │       auth_bloc.dart
 │   │   │       │       auth_event.dart
 │   │   │       │       auth_state.dart
