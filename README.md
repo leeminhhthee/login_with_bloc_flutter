@@ -28,7 +28,6 @@ The app uses **Bloc architecture** for state management and **Material Design** 
 - Tap the **call icon** to simulate a phone call.
 - Tap a contact card to open **Contact Detail Screen**.
 - Smooth **Hero animation** for contact avatar and name.
-- Direct calling functionality.
 - Pull-to-refresh contact list.
 
 ### 3. UI/UX
@@ -59,82 +58,63 @@ The app uses **Bloc architecture** for state management and **Material Design** 
 ```
 ├───lib
 │   │   main.dart
-│   │
 │   ├───config
 │   │       app_theme.dart
-│   │
 │   ├───core
 │   │   ├───constants
 │   │   │       app_assets.dart
 │   │   │       app_colors.dart
 │   │   │       app_strings.dart
-│   │   │
 │   │   ├───errors
 │   │   └───utils
 │   │           validators.dart
-│   │
 │   ├───features
 │   │   ├───auth
 │   │   │   ├───data
 │   │   │   │   ├───datasources
 │   │   │   │   │       auth_local_datasource.dart
-│   │   │   │   │
 │   │   │   │   ├───models
 │   │   │   │   │       user_model.dart
-│   │   │   │   │
 │   │   │   │   └───repositories
 │   │   │   │           auth_repository_impl.dart
-│   │   │   │
 │   │   │   ├───domain
 │   │   │   │   ├───entities
 │   │   │   │   │       user.dart
-│   │   │   │   │
 │   │   │   │   ├───repositories
 │   │   │   │   │       auth_repository.dart
-│   │   │   │   │
 │   │   │   │   └───usecases
 │   │   │   │           get_current_user.dart
 │   │   │   │           login_user.dart
 │   │   │   │           logout_user.dart
-│   │   │   │
 │   │   │   └───presentation
 │   │   │       ├───bloc
 │   │   │       │       auth_bloc.dart
 │   │   │       │       auth_event.dart
 │   │   │       │       auth_state.dart
-│   │   │       │
 │   │   │       ├───screens
 │   │   │       │       login_screen.dart
-│   │   │       │
 │   │   │       └───widgets
 │   │   │               custom_button.dart
 │   │   │               custom_textfield.dart
-│   │   │
 │   │   └───contacts
 │   │       ├───data
 │   │       │   ├───datasources
 │   │       │   │       contact_local_datasource.dart
-│   │       │   │
 │   │       │   ├───models
 │   │       │   │       contact_model.dart
-│   │       │   │
 │   │       │   └───repositories
 │   │       │           contact_repository.dart
-│   │       │
 │   │       ├───domain
 │   │       └───presentation
 │   │           ├───blocs
 │   │           │       contact_bloc.dart
 │   │           │       contact_event.dart
 │   │           │       contact_state.dart
-│   │           │
 │   │           ├───screens
 │   │           │       contact_detail_screen.dart
 │   │           │       home_screen.dart
-│   │           │
 │   │           └───widgets
 │   │                   contact_card.dart
-│   │
 │   └───shared_widgets
 ├───assets/
 │   │  mock_contacts.json
