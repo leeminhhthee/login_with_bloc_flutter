@@ -158,7 +158,6 @@ flutter build apk
 | ![](assets/demo/Pic2.jpg)  | ![](assets/demo/Pic3.jpg) | ![](assets/demo/Pic4.jpg) | ![](assets/demo/Pic5.jpg) |
 |----------------------------|---------------|----------------|------------|
 | ![](assets/demo/Pic6.jpg)  | ![](assets/demo/Pic7.jpg) | ![](assets/demo/Pic8.jpg) | ![](assets/demo/Pic9.jpg) |
-| --------------             |---------------|----------------|------------|
 | ![](assets/demo/Pic10.jpg) | 
 ---
 
