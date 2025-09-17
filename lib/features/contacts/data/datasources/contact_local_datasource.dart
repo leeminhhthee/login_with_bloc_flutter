@@ -5,8 +5,14 @@ import '../models/contact_model.dart';
 
 class ContactLocalDataSource {
   Future<List<Contact>> loadContacts() async {
-    final jsonString = await rootBundle.loadString(AppAssets.mockContacts);
-    final List<dynamic> decoded = json.decode(jsonString) as List<dynamic>;
-    return decoded.map((e) => Contact.fromJson(e as Map<String, dynamic>)).toList();
+    try {
+      final jsonString = await rootBundle.loadString(AppAssets.mockContacts);
+      final List<dynamic> decoded = json.decode(jsonString) as List<dynamic>;
+      return decoded
+          .map((e) => Contact.fromJson(e as Map<String, dynamic>))
+          .toList();
+    } catch (e) {
+      return [];
+    }
   }
 }

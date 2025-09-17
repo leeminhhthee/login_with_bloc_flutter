@@ -114,6 +114,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     return const Center(child: CircularProgressIndicator());
                   } else if (state is ContactLoaded) {
                     final contacts = state.contacts;
+                    if (contacts.isEmpty) {
+                      return Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.contact_page_outlined,
+                                size: 80, color: Colors.grey),
+                            const SizedBox(height: 16),
+                            Text(
+                              "Chưa có liên hệ nào",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey[700],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
                     return RefreshIndicator(
                       onRefresh: () async {
                         context.read<ContactBloc>().add(LoadContacts());
