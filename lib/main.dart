@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             loginUser: loginUser,
             logoutUser: logoutUser,
             getCurrentUser: getCurrentUser,
-          )..add(CheckAuthStatus()), // kiểm tra trạng thái ngay khi khởi động
+          )..add(CheckAuthStatus()), // check status immediately on startup
         ),
         BlocProvider<ContactBloc>(create: (_) => ContactBloc(contactRepo)),
       ],

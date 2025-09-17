@@ -45,7 +45,7 @@ class ContactDetailScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 24),
 
-            // Avatar với Hero animation
+            // Avatar with Hero animation
             Hero(
               tag: 'contact_avatar_${contact.id}',
               child: CircleAvatar(
@@ -63,7 +63,7 @@ class ContactDetailScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Thông tin chi tiết trong Card
+            // Detailed information in Card
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
@@ -111,7 +111,7 @@ class ContactDetailScreen extends StatelessWidget {
         ),
       ),
 
-      // Nút Call ở dưới cùng
+      // Call button at the bottom
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton.icon(

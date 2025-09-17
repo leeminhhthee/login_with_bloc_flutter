@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();  
-    // Khi vào Home, tự động load contacts
+    // When entering Home, automatically load contacts
     context.read<ContactBloc>().add(LoadContacts());
   }
 
@@ -38,11 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
       context: context,
       builder: (ctx) => AlertDialog(
         title: const Text('Logout'),
-        content: const Text('Bạn có chắc chắn muốn đăng xuất?'),
+        content: const Text('Are you sure you want to log out?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(ctx).pop(),
-            child: const Text('Hủy'),
+            child: const Text('Cancel'),
           ),
           TextButton(
             onPressed: () {
@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
 
-            // Danh sách contacts
+            // Contact list
             Expanded(
               child: BlocBuilder<ContactBloc, ContactState>(
                 builder: (context, state) {

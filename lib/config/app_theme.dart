@@ -12,7 +12,7 @@ ThemeData appLightTheme() {
       brightness: Brightness.light,
     ),
     textTheme: GoogleFonts.interTextTheme(base.textTheme),
-    scaffoldBackgroundColor: Colors.grey[50], // nền light
+    scaffoldBackgroundColor: Colors.grey[50], // light bg
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
